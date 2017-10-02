@@ -1,76 +1,4 @@
-var obj={
-    title:'白鹿原',
-    author: '陈忠实',
-    point: '9.2',
-    price:'840',
-    img:'',
-    old_price: '1200',
-    intro: '长篇小说《白鹿原》以陕西关中平原上素有“仁义村”之称的白鹿村为背景，细腻地反映出白姓和鹿姓两大家族祖孙三代的恩怨纷争。',
-    label: ['小说','当代小说','陕西'],
-    catalog:['第一章','第二章','第三章','第四章','第五章','第六章','第七章','第八章','第九章','第十章'],
-    comments:[
-        {username:'汤亚萍',user_head_img:'',time:'2017-07-30',content:'关系复杂，人物写的生动活泼。里面的白嘉轩正直，不记仇，但骨子里还是有封建的思想。鹿兆海，鹿兆鹏，白灵对各自的党忠心真诚。'},
-        {username:'',user_head_img:'',time:'2017-07-20',content:'这本书情感很真实，回味无穷。'},
-        {username:'',user_head_img:'',time:'',content:''},
-        {username:'',user_head_img:'',time:'',content:''}
-    ],
-    words:'48.6万字',
-    grounding_time:'2015-03-23',
-    company:'人民文学出版社',
-    id:'9787020090297',
-    contents:[
-        {title:'第一章',content:''},
-        {title:'第二章',content:''},
-        {title:'第三章',content:''},
-        {title:'第四章',content:''},
-        {title:'第五章',content:''},
-        {title:'第六章',content:''},
-        {title:'第七章',content:''},
-        {title:'第八章',content:''},
-        {title:'第九章',content:''},
-        {title:'第十章',content:''},
-        {title:'第十一章',content:''}
-    ]
-}
-
-
-={
-    '精选': ['分类','排行','免费','包月','特价'],
-    '出版': ['排行','特价','新书','畅销','首发'],
-    '男生': ['排行','都市','玄幻','奇文','特价'],
-    '女生': ['排行','古言','现言','奇闻','特价'],
-    '漫画': ['排行','总裁','免费','爽漫','海外']
-}
-
-=[
-    [
-        {title: '性格才是不治之症',subtitle:'精神科有怎样的绝招？',img:''},
-        {title: '金秋囤书节',subtitle:'一折FUN肆购',img:''},
-        {title: '阅读的捷径',subtitle:'别再浪费时间瞎读书了',img:''}
-    ],
-    [
-        {title: '卢思浩新书首发',subtitle:'说你愿意为了我留下来',img:''},
-        {title: 'real·特惠',subtitle:'百本小说任你选',img:''},
-        {title: '哲学才没那么可怕',subtitle:'聊什么不好聊哲学！',img:''}
-    ],
-    [
-        {title: '封面推荐',subtitle:'用生命捍卫荣耀！',img:''},
-        {title: '大帝评书',subtitle:'好书天下评！',img:''},
-        {title: '悬疑灵异',subtitle:'怪事奇谈，鬼话连篇',img:''}
-    ],
-    [
-        {title: '为灵魂清点行囊',subtitle:'追问人生的价值',img:''},
-        {title: '高手秘籍',subtitle:'限时特惠',img:''},
-        {title: '胆小鬼的黑名单',subtitle:'恐怖让我质壁分离',img:''}
-    ],
-    [
-        {title: '好书大赏',subtitle:'周末最划算',img:''},
-        {title: '读来读往49期',subtitle:'作家开撕啦！',img:''},
-        {title: '约会作家31期',subtitle:'友谊的小船说翻就翻',img:''}
-    ]
-]
-
-
+mongo数据库中有read-data库，库中有books表格和user表格，books表格用来存储书籍数据，user表格用来存储用户信息数据
 db.books.insert({
     title:'雨季不再来',
     author: '三毛',
@@ -332,6 +260,9 @@ db.books.insert({
     ]
 })
 
+
+user用户： 
+{username: '',password: '',shelf: []}
 
 
 
