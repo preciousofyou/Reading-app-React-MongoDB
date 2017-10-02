@@ -1,0 +1,83 @@
+.shelf-head {
+    height:50px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .shelf-head-edit{
+        line-height: 50px;
+        float: left;
+        margin: 0 10px;
+        font-size: 14px;
+        color: #3ec9b6;
+    }
+    .shelf-head-title {
+        font-size: 18px;
+        line-height: 50px;
+    }
+    .shelf-head-right {
+        float: right;
+        margin: 0 10px;
+        font-size: 18px;
+        color: #403F3F;
+        line-height: 50px
+    }
+    .shelf-head-all {
+        color: #3ec9b6;
+        font-size: 14px;
+    }
+}
+.shelf-content {
+    margin-top: 50px;
+    ul {
+        width: 100%;
+        // padding: 0 3px;
+        background: #fff;
+        min-height:600px;
+        text-align: center;
+        li{
+            display: inline-block;
+            // width: 100px;
+            width: 28%;
+            margin: 10px 3px;
+            position:relative;
+            .shelf-content-list {
+                height: 160px;
+                background: #E8E5E5;
+                font-size:14px;
+                line-height: 30px;
+                color: #000;
+                display: flex;
+                padding: 10px 5px;
+                box-sizing: border-box;
+            }
+            .shelf-content-last {
+                height: 180px;
+                background: #E8E5E5;
+                font-size:80px;
+                line-height: 180px;
+                text-align: center;
+                color: #ccc;
+            }
+            .shelf-content-checkbox {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                width: 16px;
+                height: 16px;
+                border: none;
+                // border-radius: 8px;
+                // border: 1px solid #000;
+            }
+        }
+    }
+    
+}
+
+.not-loged {
+    margin-top: 51px;
+    text-align: center;
+    color: #000;
+}
