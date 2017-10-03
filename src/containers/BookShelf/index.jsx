@@ -105,12 +105,12 @@ class BookShelf extends React.Component {
         this.setState({
             data: this.state.titles
         })
-        for( var i=0;i<this.state.titles.length;i++){
-            this.props.booksinfo.forEach((item,j)=>{
-                if(item.title === this.state.titles[i]){
-                    arr.push(item.id);
+       for( var i=0;i<this.state.titles.length;i++){
+            for( var j=0;j<this.props.booksinfo.length;j++){
+                if(this.props.booksinfo[j].title === this.state.titles[i]){
+                    arr.push(this.props.booksinfo[j].id);
                 }
-            })
+            }
         }
         //arr为id群
         var shelf = this.props.userinfo.shelf;
