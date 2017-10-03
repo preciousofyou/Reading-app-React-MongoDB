@@ -11,7 +11,8 @@ class Search extends React.Component {
         this.state = {
             value: '',
             data: [],
-            isShow: false
+            isShow: false,
+            searchList: ['他的国','陪你到世界终结','雨季不再来','总裁老婆','穿越狂妃','宠婚','黑道男友','伪装者','重生']
         }
     }
     render() {
@@ -33,15 +34,11 @@ class Search extends React.Component {
                         </div>
                         <div className="hot-list">
                             <ul>
-                                <li>他的国</li>
-                                <li>重生</li>
-                                <li>总裁老婆</li>
-                                <li>兽宠萌妃</li>
-                                <li>穿越狂妃</li>
-                                <li>逆天腰带</li>
-                                <li>宠婚</li>
-                                <li>黑道男友</li>
-                                <li>伪装者</li>
+                                {
+                                    this.state.searchList.map((item,i)=> {
+                                        return <li key={i} onClick={() => this.changeValue(item)}>{item}</li>
+                                    })
+                                }
                             </ul>
                         </div>
                     </div>
@@ -57,6 +54,12 @@ class Search extends React.Component {
                 
             </div>
         )
+    }
+    changeValue(item){
+        this.setState({
+            isShow: false
+        })
+        this.getDataList(item);
     }
     focusHandle(){
         this.setState({
