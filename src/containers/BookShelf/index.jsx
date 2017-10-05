@@ -53,6 +53,12 @@ class BookShelf extends React.Component {
                             })
                             : <Link to="/login" className="not-loged"><li>你还没登录呢</li></Link>
                         }
+                        {
+                            this.props.userinfo && !this.state.data.length
+                            ?<a className="not-loged">你的书架竟然是空的</a>
+                            :''
+                        }
+                        
                     </ul>
                 </div>
             </div>
@@ -75,8 +81,10 @@ class BookShelf extends React.Component {
                 ids: arr1
             })
         }
+        
     }
     showCheckbox() {
+        console.log(this.state.data)
         this.setState({
             inpShow: !this.state.inpShow
         })
@@ -102,10 +110,16 @@ class BookShelf extends React.Component {
     }
     del(){
         var arr = [];
-        this.setState({
-            data: this.state.titles
+        var arr1 = this.state.data;
+        this.state.titles.forEach((item,i)=>{
+            if(arr1.indexOf(item) !== -1){
+                arr1.splice(item,1);
+            }
         })
-       for( var i=0;i<this.state.titles.length;i++){
+        this.setState({
+            data: arr1
+        })
+        for( var i=0;i<this.state.titles.length;i++){
             for( var j=0;j<this.props.booksinfo.length;j++){
                 if(this.props.booksinfo[j].title === this.state.titles[i]){
                     arr.push(this.props.booksinfo[j].id);
