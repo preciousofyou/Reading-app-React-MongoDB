@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 import './style.less'
 
 class Reco extends React.Component {
     render() {
         return (
+            <Link to={"/detail/" + this.props.obj.id } >
             <li className="reco">
                 <div className="left-img"><img src={this.props.obj.img} alt="" /></div>
                 <div className="detail">
@@ -17,6 +19,7 @@ class Reco extends React.Component {
                     </div>
                 </div>
             </li>
+            </Link>
         )
     }
 }
