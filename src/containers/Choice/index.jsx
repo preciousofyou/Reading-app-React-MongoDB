@@ -221,48 +221,6 @@ class Choice extends React.Component {
                 </div>
                 <div className="home-another-common">
                     <ul>
-                        {/* <li>
-                            <img src="http://localhost:8080/images/book/pic_1.jpg" alt="" />
-                            <div className="detail">
-                                <h4 className="title">女总裁的全能保镖</h4>
-                                <p>退役后的唐林军不想当鸭子，更不想去洗盘子，所以为了生活，
-                                    他只能开了一家私家侦探事务所。婚外情调查，子女课外监护、安保、
-                                    讨债...</p>
-                                <div className="detail-info">
-                                    <span className="author">桃子卖没了</span>
-                                    <span className="class">言情小说</span>
-                                    <span className="point">7.9分</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="http://localhost:8080/images/book/pic_2.jpg" alt="" />
-                            <div className="detail">
-                                <h4 className="title">鉴宝大宗师</h4>
-                                <p>钱？我有！美女？不缺！地位？等等，地位是什么？在华夏国，
-                                    我富可敌国，坐拥百分之八十的珍奇异宝，每天请安的美女如云，这算地位吗？
-                                </p>
-                                <div className="detail-info">
-                                    <span className="author">不起泡的啤酒</span>
-                                    <span className="class">都市言情</span>
-                                    <span className="point">6.6分</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="http://localhost:8080/images/book/pic_3.jpg" alt="" />
-                            <div className="detail">
-                                <h4 className="title">天才高手在都市</h4>
-                                <p>会点小武功，懂点小医术，有点不要脸，少年秋羽来到大都市充当校花保镖，
-                                    他能否守身如玉，继续纯洁……
-                                </p>
-                                <div className="detail-info">
-                                    <span className="author">冷云邪神</span>
-                                    <span className="class">言情小说</span>
-                                    <span className="point">9.5分</span>
-                                </div>
-                            </div>
-                        </li> */}
                         {
                             this.state.data.map((item,i) => {
                                 return <Reco key={i} obj={item} />
