@@ -7,4 +7,10 @@ module.exports = function (app) {
             res.end(JSON.stringify(result));
         }); 
     })
+    app.post('/addComment',function(req,res,next){
+        var obj = JSON.parse(req.body.obj);
+        Book.addComment(obj,function(result){
+            res.end(result);
+        })
+    })
 }
