@@ -58,7 +58,15 @@ class Detail extends React.Component {
                     </div>
                 </Link>
                 <div className="detail-comment">
-                    <p className="detail-comment-title">图书评价</p>
+                    <span className="detail-comment-title">图书评价</span>
+                    {
+                        this.props.userinfo
+                        ?<Link to={"/writecom/" + bookdata.id}>
+                            <span className="detail-write-comment">写评价</span>
+                        </Link>
+                        :''
+                    }
+                    
                     <div>
                         <ul>
                             {
@@ -139,6 +147,9 @@ class Detail extends React.Component {
     }
     changeRoute(){
         hashHistory.push('/home');
+        this.props.actions.update({
+            navIndex: 1
+        })
     }
     addToShelf(i){
         if(!this.props.userinfo){
