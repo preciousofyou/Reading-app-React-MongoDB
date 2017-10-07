@@ -18,14 +18,14 @@ var User = {
         MongoClient.connect(DB_STR, function(err,db){
             if(err){console.log(err);return;}
             var collection = db.collection('user');
-            collection.find({username: obj.username,password:obj.password}).toArray(function(err,result){
+            collection.find({'username': obj.username,'password':obj.password}).toArray(function(err,result){
                 if(!err){
                     if(result.length!==0){
                         db.close();
                         callback(JSON.stringify(result));
                     }else{
                         db.close();
-                        callback('');
+                        callback('0');
                     }
                 }
             })
