@@ -95,7 +95,7 @@ class Choice extends React.Component {
                             this.state.bannerData.length
                             ? this.state.bannerData[this.state.curNav].list.map((item,i) => {
                                 return <li key={i}>
-                                    <p></p>
+                                    <img src={`http://localhost:8080/images/icon/${i}.png`} alt="" />
                                     <span>{item}</span>
                                 </li>
                             })
