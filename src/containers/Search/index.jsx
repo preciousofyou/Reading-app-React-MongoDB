@@ -12,7 +12,12 @@ class Search extends React.Component {
             value: '',
             data: [],
             isShow: false,
-            searchList: ['他的国','陪你到世界终结','雨季不再来','总裁老婆','穿越狂妃','宠婚','黑道男友','伪装者','重生']
+            curIndex: 0,
+            searchList: [
+                ['他的国','陪你到世界终结','雨季不再来','总裁老婆','穿越狂妃','宠婚','黑道男友','伪装者','重生'],
+                ['三体','蛇选王妃','重生','鬼夫鬼妻','伪装者','火爆兵王','逍遥兵王','小农民','寂寞空庭'],
+                ['总裁虐恋','总裁老婆','寂寞空庭','南派三叔','逆天腰带','三生三世','桃运神医','受宠萌妃','旋风少女']
+            ]
         }
     }
     render() {
@@ -30,12 +35,12 @@ class Search extends React.Component {
                     ? <div>
                         <div className="hot-title">
                             <span className="hot-title-left">大家热搜</span>
-                            <span className="hot-title-right">换一批</span>
+                            <span className="hot-title-right" onClick={() => this.changeIndex()}>换一批</span>
                         </div>
                         <div className="hot-list">
                             <ul>
                                 {
-                                    this.state.searchList.map((item,i)=> {
+                                    this.state.searchList[this.state.curIndex].map((item,i)=> {
                                         return <li key={i} onClick={() => this.changeValue(item)}>{item}</li>
                                     })
                                 }
@@ -54,6 +59,17 @@ class Search extends React.Component {
                 
             </div>
         )
+    }
+    changeIndex(){
+        if(this.state.curIndex === 2){
+            this.setState({
+                curIndex: 0
+            })
+        }else{
+            this.setState({
+                curIndex: this.state.curIndex + 1 
+            })
+        }
     }
     changeValue(item){
         this.setState({
