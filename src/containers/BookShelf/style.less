@@ -22,7 +22,7 @@
         margin: 0 10px;
         font-size: 18px;
         color: #403F3F;
-        line-height: 50px
+        line-height: 50px;
     }
     .shelf-head-all {
         color: #3ec9b6;
@@ -31,27 +31,24 @@
 }
 .shelf-content {
     margin-top: 50px;
+    
     ul {
         width: 100%;
-        // padding: 0 3px;
+        padding: 0 20px;
         background: #fff;
+        box-sizing: border-box;
         min-height:600px;
-        text-align: center;
         li{
             display: inline-block;
-            // width: 100px;
             width: 28%;
-            margin: 10px 3px;
+            margin: 20px 10px;
             position:relative;
             .shelf-content-list {
-                height: 160px;
                 background: #E8E5E5;
-                font-size:14px;
-                line-height: 30px;
-                color: #000;
-                display: flex;
-                padding: 10px 5px;
-                box-sizing: border-box;
+
+                img {
+                    width: 100%;
+                }
             }
             .shelf-content-last {
                 height: 180px;
@@ -68,8 +65,6 @@
                 width: 16px;
                 height: 16px;
                 border: none;
-                // border-radius: 8px;
-                // border: 1px solid #000;
             }
         }
     }
@@ -77,7 +72,9 @@
 }
 
 .not-loged {
+    width:100%;
     margin-top: 51px;
     text-align: center;
+    display: inline-block;
     color: #000;
 }
