@@ -53,6 +53,7 @@ class UpdatePassword extends React.Component {
     }
     submitHandle(e) {
         e.preventDefault();
+        var reg = /\s+/;
         if(this.state.oldpass !== '' && this.state.oldpass !== this.props.userinfo.password){
             this.setState({
                 alertShow:true,
@@ -74,7 +75,21 @@ class UpdatePassword extends React.Component {
             })
             this.hideAlert();
             return;
-        }
+        }else if(this.state.newpass.length < 6){
+            this.setState({
+                alertShow:true,
+                alertTitle:'密码不能少于六位数'
+            })
+            this.hideAlert();
+            return;
+        }else if(this.state.newpass.match(reg)){
+            this.setState({
+                alertShow:true,
+                alertTitle:'密码中含有空格'
+            })
+            this.hideAlert();
+            return;
+        }   
         this.updateUserData();
     }
     updateUserData() {
