@@ -16,6 +16,7 @@ import Detail from '../containers/Detail'
 import Essay from '../containers/Essay'
 import Catalog from '../containers/Catalog'
 import ClassTab from '../containers/ClassTab'
+import WriteCom from '../containers/WriteCom'
 
 class RouteMap extends React.Component {
     render() {
@@ -37,6 +38,7 @@ class RouteMap extends React.Component {
                     <Route path="/essay/:id/:chapter" component={Essay} />
                     <Route path="/catalog/:id/:chapter" component={Catalog} />
                     <Route path="/classtab/:title" component={ClassTab} />
+                    <Route path="/writecom/:id" component={WriteCom} />
                 </Route>
             </Router>
         )
