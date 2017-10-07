@@ -13,6 +13,23 @@ var Book = {
                 }
             })
         })
+    },
+    addComment: function(obj,callback){
+        MongoClient.connect(DB_STR,function(err,db){
+            if(err){console.log(err);return;}
+            var collection = db.collection('books');
+            collection.update({'id':obj.id},{$set:{'comments':obj.comments}},function(err,result){
+                if(!err){
+                    if(result.length !== 0){
+                        db.close();
+                        callback('1');
+                    }else{
+                        db.close();
+                        callback('0');
+                    }
+                }
+            })
+        })
     }
 }
 
