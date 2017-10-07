@@ -15,7 +15,8 @@ class BookShelf extends React.Component {
             bookNum: 0,
             checked: true,
             titles: [],
-            ids: []
+            ids: [],
+            imgs: []
         }
     }
     render() {
@@ -43,11 +44,15 @@ class BookShelf extends React.Component {
                                 return (<li key={i}>
                                     {this.state.inpShow
                                     ?<span>
-                                        <div className="shelf-content-list">{item}</div>
+                                        <div className="shelf-content-list">
+                                            <img src={this.state.imgs[i]} alt={item} />
+                                        </div>
                                         <input title={item} className="shelf-content-checkbox" onChange={(e) => this.addChecked(e)} type="checkbox" />
                                     </span>
                                     :<Link to={"/essay/"+ this.state.ids[i] + '/0' } >
-                                        <div className="shelf-content-list">{item}</div>
+                                        <div className="shelf-content-list">
+                                            <img src={this.state.imgs[i]} alt={item} />
+                                        </div>
                                     </Link>
                                 }</li>)
                             })
@@ -67,24 +72,26 @@ class BookShelf extends React.Component {
     componentDidMount(){
         var arr = [];
         var arr1 = [];
+        var arr2 = [];
         if(this.props.userinfo){
              for(var j = 0; j<this.props.booksinfo.length; j++){
                 for(var i = 0; i<this.props.userinfo.shelf.length; i++){
                     if(this.props.booksinfo[j].id === this.props.userinfo.shelf[i]){
                         arr.push(this.props.booksinfo[j].title);
                         arr1.push(this.props.booksinfo[j].id);
+                        arr2.push(this.props.booksinfo[j].img);
                     }
                 }  
             } 
             this.setState({
                 data: arr,
-                ids: arr1
+                ids: arr1,
+                imgs: arr2
             })
         }
         
     }
     showCheckbox() {
-        console.log(this.state.data)
         this.setState({
             inpShow: !this.state.inpShow
         })
@@ -111,13 +118,16 @@ class BookShelf extends React.Component {
     del(){
         var arr = [];
         var arr1 = this.state.data;
+        var arr2 = this.state.imgs;
         this.state.titles.forEach((item,i)=>{
             if(arr1.indexOf(item) !== -1){
-                arr1.splice(item,1);
+                arr1.splice(i,1);
+                arr2.splice(i,1);
             }
         })
         this.setState({
-            data: arr1
+            data: arr1,
+            imgs: arr2
         })
         for( var i=0;i<this.state.titles.length;i++){
             for( var j=0;j<this.props.booksinfo.length;j++){
@@ -153,6 +163,9 @@ class BookShelf extends React.Component {
             }
         }).catch(ex => {
             console.log('用户删除书架信息报错，',ex.message)
+        })
+        this.setState({
+            inpShow: false
         })
     }
 }
