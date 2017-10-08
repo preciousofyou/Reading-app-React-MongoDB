@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router,Route,IndexRoute,hashHistory } from 'react-router'
+import { Router,Route,IndexRoute,hashHistory,IndexRedirect } from 'react-router'
 
 import App from '../containers'
 import Home from '../containers/Home'
@@ -23,6 +23,7 @@ class RouteMap extends React.Component {
         return (
             <Router history={hashHistory} >
                 <Route path="/" component={App} >
+                    <IndexRedirect to="/home" />
                     <Route path="/home" component={Home}>
                         <IndexRoute component={Choice} />
                         <Route path="/shelf" component={BookShelf} />
