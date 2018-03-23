@@ -16,7 +16,7 @@
 
 项目截图：
 
-![精选首页]（https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%871.png）
+![精选首页](https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%871.png)
 
 
 项目地址： https://github.com/preciousofyou/Reading-app-React-MongoDB
