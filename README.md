@@ -15,19 +15,28 @@
 所用技术： react + react-router + redux + nodejs + express + mongo
 
 项目截图：
-
+#
+#
+#
 精选页：
 ![精选首页](https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%871.png)
-
+#
+#
+#
+#
 
 
 分类页：
 ![分类页](https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%872.png)
-
+#
+#
+#
 
 书籍详情页：
 ![书籍详情页](https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%873.png)
-
+#
+#
+#
 
 书架页：
 ![书架页](https://github.com/preciousofyou/Reading-app-React-MongoDB/blob/master/images/%E5%9B%BE%E7%89%874.png)
